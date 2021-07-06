@@ -13346,7 +13346,7 @@ rs-loader.spinner0 {
   width: 40px;
   height: 40px;
   background-color: #fff;
-  background-image: url('assets/images/loader.gif');
+  background-image: url('/assets/images/loader.gif');
   background-repeat: no-repeat;
   background-position: center center;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .15);
@@ -13368,7 +13368,7 @@ rs-loader.spinner1 {
 }
 
 rs-loader.spinner5 {
-  background-image: url('assets/images/loader.gif');
+  background-image: url('/assets/images/loader.gif');
   background-repeat: no-repeat;
   background-position: 10px 10px;
   background-color: #fff;
