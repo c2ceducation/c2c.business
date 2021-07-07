@@ -14,6 +14,8 @@
         }
     </script>
     <script id="litespeed-webfont-lib" src="assets/js/webfontloader.min.js" defer></script>
+    <!-- Style of the plugin -->    
+    <link rel="stylesheet" href="assets/css/whatsapp-chat-support.css">
     <link data-optimised="2" rel="stylesheet" href="assets/css/litespeed.css" />
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1119,6 +1121,38 @@
             </div>
         </footer>
     </div>
+    <!-- Whatsapp chat support starts -->
+    <div class="whatsapp_chat_support wcs_fixed_right" id="example_3">
+        <div class="wcs_button_label">
+            Questions? Let's Chat
+        </div>  
+        <div class="wcs_button wcs_button_circle">
+            <span class="fa fa-whatsapp"></span>
+        </div>  
+    
+        <div class="wcs_popup">
+            <div class="wcs_popup_close">
+                <span class="fa fa-close"></span>
+            </div>
+            <div class="wcs_popup_header">
+                <span class="fa fa-whatsapp"></span>
+                <strong>Customer Support</strong>
+                
+                <div class="wcs_popup_header_description">Need Help? Chat with us on Whatsapp</div>
+            </div>  
+            <div 
+                class="wcs_popup_input" 
+                data-number="528123861273"
+                data-availability='{ "monday":"08:30-18:30", "tuesday":"08:30-18:30", "wednesday":"08:30-18:30", "thursday":"08:30-18:30", "friday":"08:30-18:30" }'>
+                <input type="text" placeholder="Ask anything!" />
+                <i class="fa fa-play"></i>
+            </div>
+            <div class="wcs_popup_avatar">
+                <img src="assets/images/person.jpg" alt="Customer support person">
+            </div>
+        </div>
+    </div>
+    <!-- End::Whatsapp chat support -->
     <script type="text/javascript">
         if (typeof revslider_showDoubleJqueryError === "undefined") {
             function revslider_showDoubleJqueryError(sliderID) {
@@ -1136,10 +1170,18 @@
             }
         }
     </script>
+    <!-- Plugin JS file for whatsapp chat support -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/moment-timezone-with-data-10-year-range.min.js"></script> <!-- spanish language (es) -->
+    <script src="assets/js/whatsapp-chat-support.js"></script>
     <script type='text/javascript' id='wp-polyfill-js-after' src="data:text/javascript;base64,KCdmZXRjaCdpbiB3aW5kb3cpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLWZldGNoLm1pbi5qcz92ZXI9My4wLjAiPjwvc2NyJysnaXB0PicpOyhkb2N1bWVudC5jb250YWlucyl8fGRvY3VtZW50LndyaXRlKCc8c2NyaXB0IHNyYz0iaHR0cHM6Ly9zb2Z0ZWsucmFkaWFudHRoZW1lcy5jb20vd3AtaW5jbHVkZXMvanMvZGlzdC92ZW5kb3Ivd3AtcG9seWZpbGwtbm9kZS1jb250YWlucy5taW4uanM/dmVyPTMuNDIuMCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5ET01SZWN0KXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC1kb20tcmVjdC5taW4uanM/dmVyPTMuNDIuMCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5VUkwmJndpbmRvdy5VUkwucHJvdG90eXBlJiZ3aW5kb3cuVVJMU2VhcmNoUGFyYW1zKXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC11cmwubWluLmpzP3Zlcj0zLjYuNCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5Gb3JtRGF0YSYmd2luZG93LkZvcm1EYXRhLnByb3RvdHlwZS5rZXlzKXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC1mb3JtZGF0YS5taW4uanM/dmVyPTMuMC4xMiI+PC9zY3InKydpcHQ+Jyk7KEVsZW1lbnQucHJvdG90eXBlLm1hdGNoZXMmJkVsZW1lbnQucHJvdG90eXBlLmNsb3Nlc3QpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLWVsZW1lbnQtY2xvc2VzdC5taW4uanM/dmVyPTIuMC4yIj48L3NjcicrJ2lwdD4nKTsoJ29iamVjdEZpdCdpbiBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuc3R5bGUpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLW9iamVjdC1maXQubWluLmpzP3Zlcj0yLjMuNCI+PC9zY3InKydpcHQ+Jyk7"
         defer></script>
     <script type='text/javascript' src='assets/js/instant_click.min.js' id='litespeed-cache-js'></script>
     <script data-optimized="1" src="assets/js/31fc4.js" defer></script>
+    <!-- Initializing whatsapp chat support -->
+    <script>
+        jQuery('#example_3').whatsappChatSupport();
+    </script>
 </body>
 
 </html>
