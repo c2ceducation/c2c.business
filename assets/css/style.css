@@ -4,15 +4,15 @@
   }
 }
 
-.privacy-policy, .terms-and-conditions section {
+.privacy-policy section, .terms-and-conditions section {
   margin-top: 2.5rem;
 }
 
-.privacy-policy, .terms-and-conditions section h4 {
+.privacy-policy section h4, .terms-and-conditions section h4 {
   margin: 12px 0;
 }
 
-.privacy-policy, .terms-and-conditions section p {
+.privacy-policy section p, .terms-and-conditions section p {
   margin: 12px 0;
   font-size: 18px;
 }
