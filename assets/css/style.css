@@ -1,0 +1,5 @@
+@media (max-width: 1024px) {
+  nav ul a {
+    font-size: 18px !important;
+  }
+}
