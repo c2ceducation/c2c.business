@@ -3,3 +3,16 @@
     font-size: 18px !important;
   }
 }
+
+.privacy-policy, .terms-and-conditions section {
+  margin-top: 2.5rem;
+}
+
+.privacy-policy, .terms-and-conditions section h4 {
+  margin: 12px 0;
+}
+
+.privacy-policy, .terms-and-conditions section p {
+  margin: 12px 0;
+  font-size: 18px;
+}
