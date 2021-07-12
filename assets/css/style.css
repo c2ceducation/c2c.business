@@ -2,14 +2,22 @@
   nav ul a {
     font-size: 18px !important;
   }
+
+  /* Making the header fixed in small devices. */
+  .primary-header {
+    position: fixed !important;
+    background-color: #fff;
+  }
 }
 
+/* Giving spacing between top and bottom of each section. */
 .privacy-policy section, .terms-and-conditions section {
   margin-top: 2.5rem;
+  margin-bottom: -1.5rem;
 }
 
 .privacy-policy section h4, .terms-and-conditions section h4 {
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .privacy-policy section p, .terms-and-conditions section p {
