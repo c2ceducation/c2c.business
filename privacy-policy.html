@@ -52,20 +52,21 @@
     <div class="scrollup right">
         <span class="ti-angle-up"></span></div>
     <div class="radiantthemes-website-layout full-width body-inner preloader-wrapper">
-        <header id="header" class="rt-dark rt-submenu-light">
+        <header id="header" class="rt-dark rt-submenu-light primary-header">
             <div class="rt-header-inner">
                 <div data-elementor-type="section" data-elementor-id="45814" class="elementor elementor-45814" data-elementor-settings="[]">
                     <div class="elementor-inner">
                         <div class="elementor-section-wrap">
                             <section class="elementor-section elementor-top-section elementor-element elementor-element-34a959c elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="34a959c"
-                                data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+                                data-element_type="section" style="border-bottom: 1.5px solid #efe7e7;"
+                                data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
                                 <div class="elementor-container elementor-column-gap-default">
                                     <div class="elementor-row">
                                         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-17ec0e0" data-id="17ec0e0" data-element_type="column">
                                             <div class="elementor-column-wrap elementor-element-populated">
                                                 <div class="elementor-widget-wrap">
                                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-b0538b2 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                                        data-id="b0538b2" data-element_type="section" style="border-bottom: 1.5px solid #efe7e7;">
+                                                        data-id="b0538b2" data-element_type="section">
                                                         <div class="elementor-container elementor-column-gap-default">
                                                             <div class="elementor-row">
                                                                 <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d37e56e" data-id="d37e56e" data-element_type="column">
@@ -385,6 +386,20 @@
                 slider.style.display = "block";
             }
         }
+
+        // Fixing overheight of mobile navigation bar.
+        const mobile_menu_trigger = document.getElementById('rt-mainMenu-trigger');
+        mobile_menu_trigger.onclick = function() {
+        // Hiding mobile menu background if menu aldready open.
+        if(this.classList.contains('menu-opened')) {
+            this.classList.remove('menu-opened');
+            document.querySelector('.primary-header .rt-header-inner').style.height = 'initial';
+        }
+        else {
+            document.querySelector('.primary-header .rt-header-inner').style.height = '180px';
+            this.classList.add('menu-opened');
+        }
+    }
     </script>
     <!-- Plugin JS file for whatsapp chat support -->
     <script src="assets/js/moment.min.js"></script>
