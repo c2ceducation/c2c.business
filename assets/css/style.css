@@ -1,13 +1,35 @@
-@media (max-width: 1024px) {
-  nav ul a {
-    font-size: 18px !important;
-  }
+.services-row {
+  /* Creating a responsive grid for services content */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-gap: 1.5rem;
+  justify-items: center;
+  /* Balancing the margin between services and upcoming image. */
+}
 
-  /* Making the header fixed in small devices. */
-  .primary-header {
-    position: fixed !important;
-    background-color: #fff;
-  }
+/* Fluid width for each immediate div to fit the width of
+  grid-template-column */
+.services-row > div {
+  width: 100% !important;
+  margin: 20px 20px 50px 20px;
+}
+
+.services-row > div .elementor-element-populated {
+  padding: 0 20px 20px 20px !important;
+}
+
+/* Aligning content to center horizontally for each services card. */
+.services-row > div .elementor-element-populated .elementor-widget-wrap {
+  justify-content: center !important;
+}
+
+.services-row .elementor-widget-container {
+  padding-bottom: 0 !important;
+}
+
+/* Unsetting left property which was set in litespeed.css */
+.services-row .elementor-widget-heading {
+  left: initial !important;
 }
 
 /* Giving spacing between top and bottom of each section. */
@@ -23,4 +45,16 @@
 .privacy-policy section p, .terms-and-conditions section p {
   margin: 12px 0;
   font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  nav ul a {
+    font-size: 18px !important;
+  }
+
+  /* Making the header fixed in small devices. */
+  .primary-header {
+    position: fixed !important;
+    background-color: #fff;
+  }
 }
