@@ -79,7 +79,7 @@
 /* Giving a fixed width to the popup */
 .whatsapp_chat_support .wcs_popup {
   width: 500px !important;
-  margin-right: 10px;
+  right: unset;
 }
 
 /* Displaying contacts in the popup as a grid
@@ -88,6 +88,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  padding: 10px;
 }
 
 /* For each contact in popup display it as column
@@ -143,12 +144,4 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* Positioning the popup to bottom on small height devices. */
-@media (max-height: 700px) {
-  .whatsapp_chat_support .wcs_popup {
-    bottom: -10px;
-  }
-}
-
 /* End of whatsapp popup styles. */
