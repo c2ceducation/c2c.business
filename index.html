@@ -869,37 +869,102 @@
         </footer>
     </div>
     <!-- Whatsapp chat support starts -->
-    <div class="whatsapp_chat_support wcs_fixed_right" id="example_3"
-        style="bottom: 80px; right: 10px;">
-        <div class="wcs_button_label">
-            Questions? Let's Chat
-        </div>  
+    <div class="whatsapp_chat_support wcs_fixed_right" id="whatsapp-popup">
         <div class="wcs_button wcs_button_circle">
             <span class="fa fa-whatsapp"></span>
         </div>  
-    
+     
         <div class="wcs_popup">
             <div class="wcs_popup_close">
                 <span class="fa fa-close"></span>
             </div>
             <div class="wcs_popup_header">
-                <span class="fa fa-whatsapp"></span>
-                <strong>Customer Support</strong>
-                
-                <div class="wcs_popup_header_description">Need Help? Chat with us on Whatsapp</div>
+                <strong>Need Help? Chat with us</strong>
+                <br>
+                <div class="wcs_popup_header_description">Click one of our representatives below</div>
             </div>  
-            <div 
-                class="wcs_popup_input" 
-                data-number="528123861273"
-                data-availability='{ "monday":"08:30-18:30", "tuesday":"08:30-18:30", "wednesday":"08:30-18:30", "thursday":"08:30-18:30", "friday":"08:30-18:30" }'>
-                <input type="text" placeholder="Ask anything!" />
-                <i class="fa fa-play"></i>
-            </div>
-            <div class="wcs_popup_avatar">
-                <img src="assets/images/person.jpg" alt="Customer support person">
+            <div class="wcs_popup_person_container">
+                <div 
+                    class="wcs_popup_person" 
+                    data-number="1"
+                >
+                    <div class="wcs_popup_person_img">
+                        <img src="assets/images/user-illustration.svg"
+                            alt="Illustration image of a user">
+                    </div>
+                    <div class="wcs_popup_person_content">
+                        <div class="wcs_popup_person_name">Business Collaboration</div>
+                        <div class="wcs_popup_person_status">Available</div>
+                    </div>  
+                </div>
+                <div 
+                    class="wcs_popup_person" 
+                    data-number="1"
+                >
+                    <div class="wcs_popup_person_img">
+                        <img src="assets/images/user-illustration.svg"
+                            alt="Illustration image of a user">
+                    </div>
+                    <div class="wcs_popup_person_content">
+                        <div class="wcs_popup_person_name">E-Commerce</div>
+                        <div class="wcs_popup_person_status">Available</div>
+                    </div>
+                </div>
+                <div 
+                    class="wcs_popup_person" 
+                    data-number="1"
+                >
+                    <div class="wcs_popup_person_img">
+                        <img src="assets/images/user-illustration.svg"
+                            alt="Illustration image of a user">
+                    </div>
+                    <div class="wcs_popup_person_content">
+                        <div class="wcs_popup_person_name">E-Bike</div>
+                        <div class="wcs_popup_person_status">Available</div>
+                    </div>
+                </div>
+                <div 
+                    class="wcs_popup_person" 
+                    data-number="1"
+                >
+                    <div class="wcs_popup_person_img">
+                        <img src="assets/images/user-illustration.svg"
+                            alt="Illustration image of a user">
+                    </div>
+                    <div class="wcs_popup_person_content">
+                        <div class="wcs_popup_person_name">Digital Signature Certificate</div>
+                        <div class="wcs_popup_person_status">Available</div>
+                    </div>
+                </div>
+                <div 
+                    class="wcs_popup_person" 
+                    data-number="1"
+                >
+                    <div class="wcs_popup_person_img">
+                        <img src="assets/images/user-illustration.svg"
+                            alt="Illustration image of a user">
+                    </div>
+                    <div class="wcs_popup_person_content">
+                        <div class="wcs_popup_person_name">Recharging & Bill Payment</div>
+                        <div class="wcs_popup_person_status">Available</div>
+                    </div>
+                </div>
+                <div 
+                    class="wcs_popup_person" 
+                    data-number="1"
+                >
+                    <div class="wcs_popup_person_img">
+                        <img src="assets/images/user-illustration.svg"
+                            alt="Illustration image of a user">
+                    </div>
+                    <div class="wcs_popup_person_content">
+                        <div class="wcs_popup_person_name">Digital Learning</div>
+                        <div class="wcs_popup_person_status">Available</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </div>  
     <!-- End::Whatsapp chat support -->
     <script type="text/javascript">
         if (typeof revslider_showDoubleJqueryError === "undefined") {
@@ -928,7 +993,7 @@
     <script data-optimized="1" src="assets/js/31fc4.js" defer></script>
     <!-- Initializing whatsapp chat support -->
     <script>
-        jQuery('#example_3').whatsappChatSupport();
+        jQuery('#whatsapp-popup').whatsappChatSupport();
     </script>
 </body>
 
