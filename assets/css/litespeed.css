@@ -115715,24 +115715,6 @@ header.rt-submenu-light.header-sticky.sticky-active .rt-header-inner {
   }
 }
 
-@media(min-width:768px) {
-  .elementor-45814 .elementor-element.elementor-element-d37e56e {
-      width: 27.976%
-  }
-  .elementor-45814 .elementor-element.elementor-element-6d56731 {
-      width: 72.024%
-  }
-}
-
-@media(max-width:1024px) and (min-width:768px) {
-  .elementor-45814 .elementor-element.elementor-element-d37e56e {
-      width: 100%
-  }
-  .elementor-45814 .elementor-element.elementor-element-6d56731 {
-      width: 100%
-  }
-}
-
 .elementor-1202 .elementor-element.elementor-element-9cbea76:not(.elementor-motion-effects-element-type-background),
 .elementor-1202 .elementor-element.elementor-element-9cbea76>.elementor-motion-effects-container>.elementor-motion-effects-layer {
   background-image: url("assets/images/Img_08.png");
