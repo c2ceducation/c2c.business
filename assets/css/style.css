@@ -91,3 +91,9 @@
   top: 5px;
   right: 12px;
 }
+
+@media (max-width: 479px) {
+  #rev_slider_6_1_wrapper {
+    margin-top: -50px !important;
+  }
+}
