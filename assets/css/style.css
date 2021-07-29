@@ -68,80 +68,26 @@
   left: 20px;
 }
 
-.whatsapp_chat_support .wcs_popup_header {
-  padding: 8px 20px;
-}
-
-.whatsapp_chat_support .wcs_popup_header_description {
-  margin-top: 0;
-}
-
-/* Giving a fixed width to the popup */
 .whatsapp_chat_support .wcs_popup {
-  width: 500px !important;
-  right: unset;
+  position: absolute;
+  left: 0;
+  margin: 0 0 15px 15px;
+  overflow-y: scroll;
+  height: 400px;
+  border: 3px solid #e1e1e1;
+  border-radius: 12px;
 }
 
-/* Displaying contacts in the popup as a grid
-  with 3 column layout. */
-.whatsapp_chat_support .wcs_popup_person_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+.whtasapp_chat_support .wcs_popup_person_container {
   padding: 10px;
 }
 
-/* For each contact in popup display it as column
-  with contents centered horizontally. */
-.whatsapp_chat_support .wcs_popup_person {
-  position: relative;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 140px;
-}
-
-
-/* Changing default display: table-cell with display: block */
-.whatsapp_chat_support .wcs_popup_person_content {
-  text-align: center;
-  display: block;
-}
-
-/* Removing default overflow. */
-.whatsapp_chat_support .wcs_popup_person_img {
-  overflow: unset;
-}
-
 .whatsapp_chat_support img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
-.whatsapp_chat_support .wcs_popup_person_name {
-  line-height: 20px;
-  margin: 5px 0;
-}
-
-.whatsapp_chat_support .wcs_popup_person_status {
-  width: 80px;
-  font-size: 12px;
-}
-
-/* Positioning the popup close button to top right. */
 .whatsapp_chat_support .wcs_popup_close {
-  top: 10px;
-  right: 20px;
+  top: 5px;
+  right: 12px;
 }
-
-/* On small screen devices displaying contacts in popup
-    as 2 column layout. */
-@media (max-width: 600px) {
-  .whatsapp_chat_support .wcs_popup_person_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* End of whatsapp popup styles. */
