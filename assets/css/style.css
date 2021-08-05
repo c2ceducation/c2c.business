@@ -32,17 +32,16 @@
   left: initial !important;
 }
 
-/* Giving spacing between top and bottom of each section. */
-.privacy-policy section, .terms-and-conditions section {
+.privacy-policy article, .terms-and-conditions article {
   margin-top: 2.5rem;
   margin-bottom: -1.5rem;
 }
 
-.privacy-policy section h4, .terms-and-conditions section h4 {
+.privacy-policy article h4, .terms-and-conditions article h4 {
   margin: 10px 0;
 }
 
-.privacy-policy section p, .terms-and-conditions section p {
+.privacy-policy article p, .terms-and-conditions article p {
   margin: 12px 0;
   font-size: 18px;
 }
