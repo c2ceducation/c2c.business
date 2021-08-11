@@ -15,6 +15,7 @@
     </script>
     <script id="litespeed-webfont-lib" src="assets/js/webfontloader.min.js" defer></script>
     <!-- Style of the plugin -->    
+    <link rel="stylesheet" href="assets/css/whatsapp-chat-support.css">
     <link data-optimised="2" rel="stylesheet" href="assets/css/litespeed.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -44,6 +45,35 @@
     <meta name="msapplication-TileImage" content="assets/images/Fab_icon.png" />
     <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
     <meta name="generator" content="KGE Technologies"/>
+    <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /*loop through a collection of all HTML elements:*/
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /*remove the attribute, and call this function once more:*/
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              }      
+              xhttp.open("GET", file, false);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+            }
+          }
+        };
+    </script>
 </head>
 
 <body class="page-template page-template-elementor_header_footer page page-id-45728 wp-embed-responsive theme-softek woocommerce-no-js radiantthemes radiantthemes-softek elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-45728">
@@ -197,148 +227,16 @@
             </article>
         </main>
 
-        <footer class="wraper_footer custom-footer" id="ReachUs">
-          <div class='container'>
-              <div data-elementor-type="section" data-elementor-id="1202" class="elementor elementor-1202" data-elementor-settings="[]">
-                  <div class="elementor-inner">
-                      <div class="elementor-section-wrap">
-                          <section class="elementor-section elementor-top-section elementor-element elementor-element-9cbea76 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9cbea76"
-                              data-element_type="section" id="contactus" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
-                              <div class="elementor-container elementor-column-gap-default">
-                                  <div class="elementor-row">
-                                      <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cd1a679" data-id="cd1a679" data-element_type="column">
-                                          <div class="elementor-column-wrap elementor-element-populated">
-                                              <div class="elementor-widget-wrap">
-                                                  <section class="elementor-section elementor-inner-section elementor-element elementor-element-da408e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="da408e7"
-                                                      data-element_type="section">
-                                                      <div class="elementor-container elementor-column-gap-default">
-                                                          <div class="elementor-row" style="margin-bottom: 2rem;">
-                                                              <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-f665d44" data-id="f665d44" data-element_type="column">
-                                                                  <div class="elementor-column-wrap elementor-element-populated">
-                                                                      <div class="elementor-widget-wrap">
-                                                                          <div class="elementor-element elementor-element-6782729 radiantthemes-retina elementor-widget elementor-widget-radiant-custom-logo" data-id="6782729" data-element_type="widget" data-widget_type="radiant-custom-logo.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="logo"><a href="/"><span class="logo-rt-dark"><img src="assets/images/footer_logo.png" alt="logo" width="145" height="45" data-logoWidth="145"></span></a></div>
-                                                                              </div>
-                                                                          </div>
-                                                                          <div class="elementor-element elementor-element-2e2fb77 elementor-widget elementor-widget-text-editor" data-id="2e2fb77" data-element_type="widget" data-widget_type="text-editor.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="elementor-text-editor elementor-clearfix">
-                                                                                      One Stop Solution for all B2B or B2C
-                                          </div>
-                                                                              </div>
-                                                                          </div>
-                                                                          <div class="elementor-element elementor-element-f55b3d7 e-grid-align-left elementor-shape-circle elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="f55b3d7"
-                                                                              data-element_type="widget" data-widget_type="social-icons.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="elementor-social-icons-wrapper elementor-grid">
-                                                                                      <div class="elementor-grid-item">
-                                                                                          <a class="elementor-icon elementor-social-icon elementor-social-icon-ti-facebook elementor-repeater-item-7fec4f0" href="https://facebook.com" target="_blank">
-                                                                                              <span class="elementor-screen-only">Ti-facebook</span>
-                                                                                              <i class="ti ti-facebook"></i>					
-                                                                                          </a>
-                                                                                      </div>
-                                                                                      <div class="elementor-grid-item">
-                                                                                          <a class="elementor-icon elementor-social-icon elementor-social-icon-ti-twitter-alt elementor-repeater-item-cc70354" href="https://twitter.com" target="_blank">
-                                                                                              <span class="elementor-screen-only">Ti-twitter-alt</span>
-                                                                                              <i class="ti ti-twitter-alt"></i>					
-                                                                                          </a>
-                                                                                      </div>
-                                                                                      <div class="elementor-grid-item">
-                                                                                          <a class="elementor-icon elementor-social-icon elementor-social-icon-ti-linkedin elementor-repeater-item-4675fde" href="https://linkedin.com" target="_blank">
-                                                                                              <span class="elementor-screen-only">Ti-linkedin</span>
-                                                                                              <i class="ti ti-linkedin"></i>					
-                                                                                          </a>
-                                                                                      </div>
-                                                                                      <div class="elementor-grid-item">
-                                                                                          <a class="elementor-icon elementor-social-icon elementor-social-icon-ti-pinterest-alt elementor-repeater-item-315e257" href="https://pintrest.com" target="_blank">
-                                                                                              <span class="elementor-screen-only">Ti-pinterest-alt</span>
-                                                                                              <i class="ti ti-pinterest-alt"></i>					
-                                                                                          </a>
-                                                                                      </div>
-                                                                                  </div>
-                                                                              </div>
-                                                                          </div>
-                                                                          <div class="elementor-element elementor-element-60dbe57 particle-moving-2 elementor-absolute elementor-hidden-phone elementor-hidden-tablet elementor-widget elementor-widget-image"
-                                                                              data-id="60dbe57" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="elementor-image">
-                                                                                      <img width="34" height="34" src="assets/images/digi-marketing-img11.png" class="attachment-full size-full" alt="digi-marketing-img11" loading="lazy" /></div>
-                                                                              </div>
-                                                                          </div>
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2d31857" data-id="2d31857" data-element_type="column">
-                                                                  <div class="elementor-column-wrap elementor-element-populated">
-                                                                      <div class="elementor-widget-wrap">
-                                                                          <div class="elementor-element elementor-element-c4671d1 elementor-widget elementor-widget-heading" data-id="c4671d1" data-element_type="widget" data-widget_type="heading.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <h6 class="elementor-heading-title elementor-size-default">Quick Links</h6>
-                                                                              </div>
-                                                                          </div>
-                                                                          <div class="elementor-element elementor-element-60fb7d1 footer-one-listing elementor-widget elementor-widget-radiant-list" data-id="60fb7d1" data-element_type="widget" data-widget_type="radiant-list.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="radiantthemes-list rt176923300 element-one  ">
-                                                                                      <ul>
-                                                                                          <li><a href="#home">Home</a></li>
-                                                                                      </ul>
-                                                                                  </div>
-                                                                              </div>
-                                                                          </div>
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-9254426 footer-contact" data-id="9254426" data-element_type="column">
-                                                                  <div class="elementor-column-wrap elementor-element-populated">
-                                                                      <div class="elementor-widget-wrap">
-                                                                          <div class="elementor-element elementor-element-856f6ce elementor-widget elementor-widget-heading" data-id="856f6ce" data-element_type="widget" data-widget_type="heading.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <h6 class="elementor-heading-title elementor-size-default">Contact Us</h6>
-                                                                              </div>
-                                                                          </div>
-                                                                          <div class="elementor-element elementor-element-704ad20 elementor-widget elementor-widget-heading" data-id="704ad20" data-element_type="widget" data-widget_type="heading.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="elementor-heading-title elementor-size-default">enquiry@c2c.business</div>
-                                                                                  <div class="elementor-heading-title elementor-size-default">+91 - 44 - 22 416 011</div>
-                                                                              </div>
-                                                                          </div>
-                                                                      </div>
-                                                                  </div>
-                                                              </div>                                                                
-                                                          </div>
-                                                      </div>
-                                                  </section>
-                                                  <section class="elementor-section elementor-inner-section elementor-element elementor-element-2697f09 elementor-section-boxed elementor-section-height-default elementor-section-height-default  mt-0" data-id="2697f09"
-                                                      data-element_type="section">
-                                                      <div class="elementor-container elementor-column-gap-default">
-                                                          <div class="elementor-row">
-                                                              <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7f381fb" data-id="7f381fb" data-element_type="column">
-                                                                  <div class="elementor-column-wrap elementor-element-populated">
-                                                                      <div class="elementor-widget-wrap">
-                                                                          <div class="elementor-element elementor-element-fc04934 elementor-widget elementor-widget-heading" data-id="fc04934" data-element_type="widget" data-widget_type="heading.default">
-                                                                              <div class="elementor-widget-container">
-                                                                                  <div class="elementor-heading-title elementor-size-default">© 2021 C2C VENTURE PRIVATE LIMITED. All Rights Reserved.</div>
-                                                                              </div>
-                                                                          </div>
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </section>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </section>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </footer>
+        <div w3-include-html="Components/footer.html"></div>
     </div>
+
+    <!-- Whatsapp chat support starts -->
+    <div w3-include-html="Components/whatsapp-popup.html"></div>  
+    <!-- End::Whatsapp chat support -->
+
+    <script>
+        includeHTML();
+    </script>
     <script type="text/javascript">
       if (typeof revslider_showDoubleJqueryError === "undefined") {
           function revslider_showDoubleJqueryError(sliderID) {
@@ -356,13 +254,17 @@
           }
       }
   </script>
-  <!-- Plugin JS file for whatsapp chat support -->
-  <script src="assets/js/moment.min.js"></script>
-  <script src="assets/js/moment-timezone-with-data-10-year-range.min.js"></script> <!-- spanish language (es) -->
-  <script src="assets/js/whatsapp-chat-support.js"></script>
-  <script type='text/javascript' id='wp-polyfill-js-after' src="data:text/javascript;base64,KCdmZXRjaCdpbiB3aW5kb3cpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLWZldGNoLm1pbi5qcz92ZXI9My4wLjAiPjwvc2NyJysnaXB0PicpOyhkb2N1bWVudC5jb250YWlucyl8fGRvY3VtZW50LndyaXRlKCc8c2NyaXB0IHNyYz0iaHR0cHM6Ly9zb2Z0ZWsucmFkaWFudHRoZW1lcy5jb20vd3AtaW5jbHVkZXMvanMvZGlzdC92ZW5kb3Ivd3AtcG9seWZpbGwtbm9kZS1jb250YWlucy5taW4uanM/dmVyPTMuNDIuMCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5ET01SZWN0KXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC1kb20tcmVjdC5taW4uanM/dmVyPTMuNDIuMCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5VUkwmJndpbmRvdy5VUkwucHJvdG90eXBlJiZ3aW5kb3cuVVJMU2VhcmNoUGFyYW1zKXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC11cmwubWluLmpzP3Zlcj0zLjYuNCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5Gb3JtRGF0YSYmd2luZG93LkZvcm1EYXRhLnByb3RvdHlwZS5rZXlzKXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC1mb3JtZGF0YS5taW4uanM/dmVyPTMuMC4xMiI+PC9zY3InKydpcHQ+Jyk7KEVsZW1lbnQucHJvdG90eXBlLm1hdGNoZXMmJkVsZW1lbnQucHJvdG90eXBlLmNsb3Nlc3QpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLWVsZW1lbnQtY2xvc2VzdC5taW4uanM/dmVyPTIuMC4yIj48L3NjcicrJ2lwdD4nKTsoJ29iamVjdEZpdCdpbiBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuc3R5bGUpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLW9iamVjdC1maXQubWluLmpzP3Zlcj0yLjMuNCI+PC9zY3InKydpcHQ+Jyk7"
-      defer></script>
-  <script type='text/javascript' src='assets/js/instant_click.min.js' id='litespeed-cache-js'></script>
-  <script data-optimized="1" src="assets/js/31fc4.js" defer></script>
+    <!-- Plugin JS file for whatsapp chat support -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/moment-timezone-with-data-10-year-range.min.js"></script> <!-- spanish language (es) -->
+    <script src="assets/js/whatsapp-chat-support.js"></script>
+    <script type='text/javascript' id='wp-polyfill-js-after' src="data:text/javascript;base64,KCdmZXRjaCdpbiB3aW5kb3cpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLWZldGNoLm1pbi5qcz92ZXI9My4wLjAiPjwvc2NyJysnaXB0PicpOyhkb2N1bWVudC5jb250YWlucyl8fGRvY3VtZW50LndyaXRlKCc8c2NyaXB0IHNyYz0iaHR0cHM6Ly9zb2Z0ZWsucmFkaWFudHRoZW1lcy5jb20vd3AtaW5jbHVkZXMvanMvZGlzdC92ZW5kb3Ivd3AtcG9seWZpbGwtbm9kZS1jb250YWlucy5taW4uanM/dmVyPTMuNDIuMCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5ET01SZWN0KXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC1kb20tcmVjdC5taW4uanM/dmVyPTMuNDIuMCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5VUkwmJndpbmRvdy5VUkwucHJvdG90eXBlJiZ3aW5kb3cuVVJMU2VhcmNoUGFyYW1zKXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC11cmwubWluLmpzP3Zlcj0zLjYuNCI+PC9zY3InKydpcHQ+Jyk7KHdpbmRvdy5Gb3JtRGF0YSYmd2luZG93LkZvcm1EYXRhLnByb3RvdHlwZS5rZXlzKXx8ZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgc3JjPSJodHRwczovL3NvZnRlay5yYWRpYW50dGhlbWVzLmNvbS93cC1pbmNsdWRlcy9qcy9kaXN0L3ZlbmRvci93cC1wb2x5ZmlsbC1mb3JtZGF0YS5taW4uanM/dmVyPTMuMC4xMiI+PC9zY3InKydpcHQ+Jyk7KEVsZW1lbnQucHJvdG90eXBlLm1hdGNoZXMmJkVsZW1lbnQucHJvdG90eXBlLmNsb3Nlc3QpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLWVsZW1lbnQtY2xvc2VzdC5taW4uanM/dmVyPTIuMC4yIj48L3NjcicrJ2lwdD4nKTsoJ29iamVjdEZpdCdpbiBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuc3R5bGUpfHxkb2N1bWVudC53cml0ZSgnPHNjcmlwdCBzcmM9Imh0dHBzOi8vc29mdGVrLnJhZGlhbnR0aGVtZXMuY29tL3dwLWluY2x1ZGVzL2pzL2Rpc3QvdmVuZG9yL3dwLXBvbHlmaWxsLW9iamVjdC1maXQubWluLmpzP3Zlcj0yLjMuNCI+PC9zY3InKydpcHQ+Jyk7"
+        defer></script>
+    <script type='text/javascript' src='assets/js/instant_click.min.js' id='litespeed-cache-js'></script>
+    <script data-optimized="1" src="assets/js/31fc4.js" defer></script>
+    <!-- Initializing whatsapp chat support -->
+    <script>
+        jQuery('#whatsapp-popup').whatsappChatSupport();
+    </script>
   </body>
 </html>
