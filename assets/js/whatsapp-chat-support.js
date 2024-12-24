@@ -52,7 +52,7 @@
         almostAvailableMsg          :   'I will be available soon', // if today is an available day and before the time starts
         dialogNotAvailableMsg       :   'I am not available today', // message when its not an available day or once the available hours have passed
         dialogAlmostAvailableMsg    :   'I will be available soon', // if today is an available day and before the time starts
-        defaultMsg                  :   'Hi, I want to talk with you about C2C.', // default support msg     
+        defaultMsg                  :   'Hi, I want to talk with you about Product.', // default support msg     
         debug                       :   false, // some messages for debug purposes
 
         // Events
