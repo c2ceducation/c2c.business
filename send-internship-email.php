@@ -1,28 +1,39 @@
 <?php
+// Allow requests from your GitHub Pages frontend
+header('Access-Control-Allow-Origin: https://c2ceducation.github.io');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 
+// Handle preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode(['success' => false, 'message' => 'Invalid request']);
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Method Not Allowed']);
     exit;
 }
 
 $data = json_decode(file_get_contents('php://input'), true);
 if (!$data) {
-    echo json_encode(['success' => false, 'message' => 'Invalid data']);
+    echo json_encode(['success' => false, 'message' => 'Invalid JSON input']);
     exit;
 }
 
 $sanitize = fn($v) => htmlspecialchars(trim($v ?? ''), ENT_QUOTES, 'UTF-8');
-$fullName = $sanitize($data['fullName']);
-$dob = $sanitize($data['dob']);
-$email = $sanitize($data['email']);
-$whatsapp = $sanitize($data['whatsapp']);
-$address = $sanitize($data['address']);
-$qualification = $sanitize($data['qualification']);
-$college = $sanitize($data['college']);
-$specialization = $sanitize($data['specialization']);
-$internshipArea = $sanitize($data['internshipArea']);
-$duration = $sanitize($data['duration']);
+$fullName = $sanitize($data['fullName'] ?? '');
+$dob = $sanitize($data['dob'] ?? '');
+$email = $sanitize($data['email'] ?? '');
+$whatsapp = $sanitize($data['whatsapp'] ?? '');
+$address = $sanitize($data['address'] ?? '');
+$qualification = $sanitize($data['qualification'] ?? '');
+$college = $sanitize($data['college'] ?? '');
+$specialization = $sanitize($data['specialization'] ?? '');
+$internshipArea = $sanitize($data['internshipArea'] ?? '');
+$duration = $sanitize($data['duration'] ?? '');
 
 if (!$fullName || !$email || !$whatsapp || !$qualification || !$college || !$specialization || !$internshipArea || !$duration) {
     echo json_encode(['success' => false, 'message' => 'Missing required fields']);
@@ -30,7 +41,7 @@ if (!$fullName || !$email || !$whatsapp || !$qualification || !$college || !$spe
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(['success' => false, 'message' => 'Invalid email']);
+    echo json_encode(['success' => false, 'message' => 'Invalid email address']);
     exit;
 }
 
@@ -122,12 +133,15 @@ WhatsApp: <a href='https://wa.me/$whatsappLink'>$whatsapp</a>
 </body>
 </html>";
 
-$headers = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: enquiry@c2c.business\r\n";
+$headers  = "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+$headers .= "From: C2C Internship Portal <enquiry@c2c.business>\r\n";
 $headers .= "Reply-To: $email\r\n";
 
-$mailSent = mail('hr@c2c.business', 'New Internship Application - ' . $fullName, $emailBody, $headers);
+$mailSent = @mail('hr@c2c.business', 'New Internship Application - ' . $fullName, $emailBody, $headers);
 
-echo json_encode(['success' => $mailSent, 'message' => $mailSent ? 'Application submitted successfully' : 'Failed to send email']);
+echo json_encode([
+    'success' => $mailSent,
+    'message' => $mailSent ? 'Application submitted successfully' : 'Failed to send email. Please check server SMTP setup.'
+]);
 ?>
