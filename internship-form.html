@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Application - C2C Venture</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #333; }
+        
+        /* Navigation Header */
+        .navbar { background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .navbar-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .navbar-logo { display: flex; align-items: center; text-decoration: none; color: #104cba; font-weight: 700; font-size: 1.2rem; }
+        .navbar-logo img { height: 45px; margin-right: 10px; }
+        .navbar-menu { display: flex; gap: 2rem; align-items: center; }
+        .navbar-menu a { text-decoration: none; color: #333; font-weight: 500; transition: all 0.3s ease; font-size: 0.95rem; }
+        .navbar-menu a:hover { color: #104cba; }
+        .navbar-menu .active { color: #104cba; border-bottom: 2px solid #104cba; padding-bottom: 5px; }
+        .navbar-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .navbar-toggle span { width: 25px; height: 3px; background: #104cba; border-radius: 2px; transition: all 0.3s ease; }
+        .navbar-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+        .navbar-toggle.active span:nth-child(2) { opacity: 0; }
+        .navbar-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+        
+        /* Page Header */
+        .header { background: linear-gradient(135deg, #104cba 0%, #0d3a8f 100%); color: white; padding: 60px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+        .header p { font-size: 1.1rem; opacity: 0.95; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; margin-bottom: 30px; color: #104cba; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-size: 1rem; }
+        .back-link:hover { color: #0d3a8f; transform: translateX(-5px); }
+        .internship-form-container { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 2rem; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin: 3rem auto; }
+        .internship-form { display: flex; flex-direction: column; gap: 2rem; }
+        .form-section { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .form-section h4 { color: #104cba; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600; border-bottom: 2px solid #104cba; padding-bottom: 0.5rem; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: 1 / -1; }
+        .form-group label { font-weight: 600; color: #333; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .form-group input, .form-group select, .form-group textarea { padding: 0.75rem; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem; font-family: inherit; transition: all 0.3s ease; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #104cba; box-shadow: 0 0 0 3px rgba(16,76,186,0.1); }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .form-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
+        .btn-submit, .btn-reset { padding: 0.75rem 2rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
+        .btn-submit { background: linear-gradient(90deg, #ff3834 0%, #ff7133 100%); color: white; }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,56,52,0.3); }
+        .btn-reset { background: #e0e0e0; color: #333; }
+        .btn-reset:hover { background: #d0d0d0; }
+        .success-message { background: white; padding: 3rem 2rem; border-radius: 8px; text-align: center; animation: slideIn 0.5s ease; }
+        .success-content h3 { color: #104cba; font-size: 1.8rem; margin-bottom: 1rem; }
+        .success-content p { color: #666; font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .success-content .back-link { margin-top: 20px; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .validation-alert { background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%); border-left: 4px solid #ff4444; border-radius: 6px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; animation: slideDown 0.4s ease; box-shadow: 0 4px 12px rgba(255,68,68,0.15); }
+        .alert-content { color: #d32f2f; }
+        .alert-content strong { display: block; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .alert-content p { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Tablet Responsive */
+        @media (max-width: 768px) {
+            .navbar-container { height: 60px; padding: 0 15px; }
+            .navbar-logo { font-size: 1rem; }
+            .navbar-logo img { height: 40px; }
+            .navbar-menu { gap: 1.5rem; }
+            .navbar-menu a { font-size: 0.9rem; }
+            .navbar-toggle { display: flex; }
+            .navbar-menu { position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: white; gap: 0; padding: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+            .navbar-menu.active { max-height: 300px; }
+            .navbar-menu a { padding: 0.75rem 1.5rem; border-bottom: 1px solid #f0f0f0; }
+            .navbar-menu a:hover { background: #f5f5f5; }
+            .header { padding: 40px 15px; }
+            .header h1 { font-size: 1.8rem; }
+            .header p { font-size: 1rem; }
+            .internship-form-container { padding: 1.5rem; margin: 2rem 1rem; }
+            .form-section { padding: 1rem; }
+            .form-row { grid-template-columns: 1fr; gap: 1rem; }
+            .form-actions { flex-direction: column; }
+            .btn-submit, .btn-reset { width: 100%; }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .navbar-container { height: 55px; padding: 0 10px; }
+            .navbar-logo { font-size: 0.9rem; }
+            .navbar-logo img { height: 35px; margin-right: 5px; }
+            .navbar-menu a { font-size: 0.85rem; padding: 0.6rem 1rem; }
+            .header { padding: 30px 10px; }
+            .header h1 { font-size: 1.4rem; }
+            .header p { font-size: 0.95rem; }
+            .back-link { font-size: 0.9rem; margin-bottom: 20px; }
+            .internship-form-container { padding: 1rem; margin: 1.5rem 0.5rem; }
+            .form-section h4 { font-size: 1rem; }
+            .form-group label { font-size: 0.9rem; }
+            .form-group input, .form-group select, .form-group textarea { font-size: 16px; }
+            .validation-alert { padding: 0.75rem 1rem; margin-bottom: 1rem; }
+            .alert-content strong { font-size: 1rem; }
+            .alert-content p { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Responsive Navigation Header -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="assets/images/header_logo.png" alt="C2C Logo">
+                <span>C2C Venture</span>
+            </a>
+            <div class="navbar-toggle" id="navbarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navbar-menu" id="navbarMenu">
+                <a href="/">Home</a>
+                <a href="/#ourservices">Services</a>
+                <a href="/#aboutus">About Us</a>
+                <a href="internship-form.html" class="active">Internship</a>
+                <a href="/#ReachUs">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>📋 Internship Application</h1>
+        <p>Join C2C Venture Pvt Ltd and grow your career with us</p>
+    </div>
+
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <div class="internship-form-container">
+            <form id="internshipForm" class="internship-form">
+                <div class="form-section">
+                    <h4>Personal Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Contact Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number *</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+91" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Education Qualification</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="qualification">Highest Qualification *</label>
+                            <select id="qualification" name="qualification" required>
+                                <option value="">Select Qualification</option>
+                                <option value="10th Pass">10th Pass</option>
+                                <option value="12th Pass">12th Pass</option>
+                                <option value="Diploma">Diploma</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="Master's Degree">Master's Degree</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="college">College/Institute Name *</label>
+                            <input type="text" id="college" name="college" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="specialization">UG/PG Specialization *</label>
+                            <input type="text" id="specialization" name="specialization" placeholder="e.g., Computer Science, Commerce, Arts" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Internship Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="internshipArea">Internship Area *</label>
+                            <select id="internshipArea" name="internshipArea" required>
+                                <option value="">Select Area</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="Business Development">Business Development</option>
+                                <option value="GST Accounting">GST Accounting</option>
+                                <option value="E-Commerce">E-Commerce</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration (in months) *</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select Duration</option>
+                                <option value="1 Month">1 Month</option>
+                                <option value="2 Months">2 Months</option>
+                                <option value="3 Months">3 Months</option>
+                                <option value="6 Months">6 Months</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row" id="otherDurationRow" style="display: none;">
+                        <div class="form-group full-width">
+                            <label for="otherDuration">Please specify duration (in months) *</label>
+                            <input type="text" id="otherDuration" name="otherDuration" placeholder="e.g., 4, 5, 7, 8 months">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="validationAlert" class="validation-alert" style="display: none;"></div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                    <button type="reset" class="btn-reset">Clear Form</button>
+                </div>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                <div class="success-content">
+                    <h3>Thank You!</h3>
+                    <p>Thanks for applied the internship with C2C Venture Pvt Ltd, HR Team will contact you via email or whatsapp</p>
+                    <a href="/" class="back-link">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/internship-form.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const navbarToggle = document.getElementById('navbarToggle');
+        const navbarMenu = document.getElementById('navbarMenu');
+
+        navbarToggle.addEventListener('click', function() {
+            navbarToggle.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navbarMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarToggle.classList.remove('active');
+                navbarMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
