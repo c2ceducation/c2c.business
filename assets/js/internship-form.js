@@ -193,10 +193,19 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('https://c2ceducation.github.io/c2c.business/send-internship-email.php', {
+                const web3FormData = new FormData();
+                web3FormData.append('access_key', 'd50b6123-7030-4008-8bae-ac80ac6b64da');
+                web3FormData.append('subject', 'New Internship Application from ' + formData.fullName);
+                web3FormData.append('from_name', formData.fullName);
+                web3FormData.append('email', formData.email);
+                
+                Object.keys(formData).forEach(key => {
+                    web3FormData.append(key, formData[key]);
+                });
+
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                    body: web3FormData
                 });
 
                 const result = await response.json();
@@ -213,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         otherDurationRow.style.display = 'none';
                     }, 5000);
                 } else {
-                    showValidationAlert('Error: ' + result.message);
+                    showValidationAlert('Error: ' + (result.message || 'Failed to submit form'));
                 }
             } catch (error) {
                 showValidationAlert('An error occurred while submitting the form. Please try again.');
