@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('send-internship-email.php', {
+                const response = await fetch('https://c2ceducation.github.io/c2c.business/send-internship-email.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
